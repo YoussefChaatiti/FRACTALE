@@ -1,0 +1,35 @@
+import random
+import  matplotlib.pyplot as plt
+x0=0
+y0=0
+Mx = []
+My = []
+
+for i in range (5000):
+    p=random.uniform(0,1)
+    if p<.1:
+        x=0.05*x0
+        y=0.60*y0
+    if 0.1<p<0.2:
+        x=0.05*x0
+        y=-0.50*y+1.00
+    if 0.2<p<0.4:
+        x=0.46*x0 - 0.32*y0
+        y=0.39*x0+0.38*y0+0.60    
+    if 0.4<p<0.6:
+        x=0.47*x0 - 0.15*y0
+        y=0.17*x0+0.42*y0+1.10 
+        
+    if 0.6<p<0.8 :
+        x=x0*0.43+y0*0.28
+        y=x0*(-0.25) + y0*0.45+1
+    if 0.8<p<1 :
+        x=x0*0.42+y0*0.26
+        y=x0*(-0.35) + y0*0.31+0.7
+   
+    x0=x
+    y0=y
+    Mx+=[y]
+    My+=[x]
+plt.plot(My,Mx,'r.')
+plt.show()
